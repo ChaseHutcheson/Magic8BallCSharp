@@ -10,18 +10,54 @@ namespace Magic8BallCSharp
     {
         static void Main(string[] args)
         {
+            string answer;
+            do
+            {
+                Console.Write("Ask The 8 Ball a Question (Type QUIT to quit): ");
+                answer = Console.ReadLine();
+                Console.WriteLine(Magic8Ball());
+            } while (answer.ToUpper() != "QUIT");
+            
         }
 
-        public Magic8Ball()
+        public static string Magic8Ball()
         {
-            Random random = new Random();
+            string answer;
 
-            switch (random)
+            Random random = new Random();
+            int randomNum = random.Next(1, 1);
+
+            switch (randomNum)
             {
                 case 1:
-                    string answer = "It is certain";
+                    answer = "It is certain";
                     return answer;
-                    break;
+                case 2:
+                    answer = "Yes.";
+                    return answer;
+                case 3:
+                    answer = "Absolutely";
+                    return answer;
+                case 4:
+                    answer = "I Foresee It.";
+                    return answer;
+                case 5:
+                    answer = "No.";
+                    return answer;
+                case 6:
+                    answer = "Not at All.";
+                    return answer;
+                case 7:
+                    answer = "No Way Jose";
+                    return answer;
+                case 8:
+                    answer = "Nu Uh";
+                    return answer;
+                case 9:
+                    answer = "Reply Hazy, Try Again.";
+                    return answer;
+                default:
+                    return "Try again";
             }
 
         }
